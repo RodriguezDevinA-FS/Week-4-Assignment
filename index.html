@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Assignment 4: Employee Tracker</title>
+</head>
+<body>
+    <main>
+        <!-- Header section with the title -->
+        <section>
+            <h1>Employee Tracker</h1>
+            <form id="addEmployee">
+                <input type="text" id="name" placeholder="Name" required />
+                <input type="number" id="age" min="16" placeholder="Age" required />
+                <input type="number" id="hours" min="5" max="65" placeholder="Hours" required />
+                <input type="number" id="payRate" min="1" placeholder="Pay Rate" required />
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+        <!-- Section for editing an employee -->
+        <section id="employeeListSection">
+            <h2>Current Employees</h2>
+            <div class="table-container">
+                <div class="employee-list-header">
+                    <div class="employee-list-column">Employee ID</div>
+                    <div class="employee-list-column">Name</div>
+                    <div class="employee-list-column">Age</div>
+                    <div class="employee-list-column">Salary</div>
+                    <div class="employee-list-column">Hours</div>
+                    <div class="employee-list-column">Pay Rate</div>
+                    <div class="employee-list-column">Type</div>
+                    <div class="employee-list-column">Edit/Remove</div>
+                </div>
+                <!-- Body of the employee list, where employee rows will be -->
+                <div id="employeeListBody" class="employee-list-body">
+                    </div>
+            </div>
+        </section>
+    </main>
+    <!-- Include the main JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

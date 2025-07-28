@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #212121;
+    --secondary-color: #424242;
+    --tertiary-color: #BDBDBD;
+    --background-color: #EEEEEE;
+    --button-color: #CCCCCC;
+    --button-hover-color: #5a5959;
+    --text-color-light: #FFFFFF;
+    --text-color-medium: #757575;
+    --text-color-dark: #212121;
+    --font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+main {
+    align-items: center;
+    max-width: 1250px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    align-items: end;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) minmax(100px, auto);
+    margin-top: 20px;
+}
+
+form button[type="submit"] {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--button-hover-color);
+}
+
+form input[type="text"],
+form input[type="number"] {
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+form input[type="text"][readonly],
+form input[type="number"][readonly] {
+    background-color: var(--background-color);
+}
+
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Employee List Header and Row Styles */
+.employee-list-header,
+.employee-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.employee-list-header {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    font-weight: bold;
+    padding: 10px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.employee-list-column {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Employee Row Styles */
+.employee-row {
+    background-color: var(--tertiary-color);
+}
+
+.employee-row > div {
+    padding: 10px;
+    text-align: left;
+    border-right: 1px solid var(--secondary-color);
+}
+
+.employee-row > div:last-child {
+    border-right: none; 
+}
+
+.employee-row button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 15px;
+    margin: 2.5px;
+    padding: 5px 10px;
+}
+
+/* Edit button styles */
+.employee-row button.edit-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Remove button styles */
+table button.remove-button {
+    background-color: #E0E0E0;
+    color: var(--text-color-dark);
+}
+.employee-row button.remove-button {
+    background-color: #E0E0E0;
+    color: var(--text-color-dark);
+}
+
+table button.remove-button:hover {
+    background-color: var(--button-hover-color);
+}
+.employee-row button.remove-button:hover {
+    background-color: var(--button-hover-color);
+}
