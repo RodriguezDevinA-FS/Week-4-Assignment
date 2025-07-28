@@ -15,8 +15,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color-dark);
     font-family: var(--font-family);
-    margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 h1, h2 {
@@ -28,31 +27,29 @@ h1, h2 {
 main {
     align-items: center;
     max-width: 1250px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    margin: 0 auto;
 }
 
 section {
     background-color: var(--tertiary-color);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 15px;
+    padding: 15px;
 }
 
 /* Form Styles */
 form {
-    align-items: end;
-    display: grid;
+    align-items: center;
+    display: flex;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) minmax(100px, auto);
-    margin-top: 20px;
 }
 
 form button[type="submit"] {
     background-color: var(--button-color);
-    border: none;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
     color: var(--primary-color);
     cursor: pointer;
@@ -83,10 +80,7 @@ form input[type="number"][readonly] {
 
 /* Table Styles */
 .table-container {
-    overflow-x: auto;
-    width: 100%;
-    margin-top: 20px;
-    border: 1px solid var(--secondary-color);
+    border: .5px solid var(--secondary-color);
     border-radius: 5px;
 }
 
@@ -95,7 +89,7 @@ form input[type="number"][readonly] {
 .employee-row {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    border-bottom: 1px solid var(--secondary-color);
+    border: .5px solid var(--secondary-color);
 }
 
 .employee-list-header {
@@ -103,16 +97,10 @@ form input[type="number"][readonly] {
     color: var(--text-color-light);
     font-weight: bold;
     padding: 10px 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 }
 
 .employee-list-column {
-    padding: 10px;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-align: center;
 }
 
 /* Employee Row Styles */
@@ -122,43 +110,32 @@ form input[type="number"][readonly] {
 
 .employee-row > div {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border-right: 1px solid var(--secondary-color);
 }
 
-.employee-row > div:last-child {
-    border-right: none; 
-}
-
-.employee-row button {
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 5px;
-    color: var(--primary-color);
-    cursor: pointer;
-    font-size: 15px;
-    margin: 2.5px;
-    padding: 5px 10px;
-}
-
 /* Edit button styles */
+.employee-row button.edit-button {
+    background-color: #E0E0E0;
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color-dark);
+}
+
 .employee-row button.edit-button:hover {
     background-color: var(--button-hover-color);
+    color: var(--text-color-light);
+    cursor: pointer;
 }
 
 /* Remove button styles */
-table button.remove-button {
-    background-color: #E0E0E0;
-    color: var(--text-color-dark);
-}
 .employee-row button.remove-button {
     background-color: #E0E0E0;
+    border: 1px solid var(--secondary-color);
     color: var(--text-color-dark);
 }
 
-table button.remove-button:hover {
-    background-color: var(--button-hover-color);
-}
 .employee-row button.remove-button:hover {
     background-color: var(--button-hover-color);
+    color: var(--text-color-light);
+    cursor: pointer;
 }
