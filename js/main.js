@@ -60,7 +60,7 @@ function displayEmployees() {
     // Clear the existing employee list body
     employeeListBody.innerHTML = ``;
 
-    // Loop through each employee and create a table row
+    // Loop through each employee and create a div row
     employees.forEach((employee) => {
         // Determine the type of employee (Manager or Part-Time)
         const type = determineType(employee.hours);
@@ -75,7 +75,7 @@ function displayEmployees() {
 
         // Create a new div for each employee row
         const employeeRowDiv = document.createElement(`div`);
-        employeeRowDiv.classList.add(`employee-row`); // Add a class for styling
+        employeeRowDiv.classList.add(`employee-row`); // Add a class for styling consistent with CSS
 
         // Set the inner HTML of the employee row with the employee's data
         employeeRowDiv.innerHTML = `
@@ -91,12 +91,12 @@ function displayEmployees() {
                 <button class="remove-button" data-employee-id="${employee.id}">Remove</button>
             </div>
         `;
-        // Create a table row element
+        // Append the employee row div to the employee list body
         employeeListBody.appendChild(employeeRowDiv);
 
-        // Attach event listeners directly to each button
-        const editButton = tableRow.querySelector(`.edit-button`);
-        const removeButton = tableRow.querySelector(`.remove-button`);
+        // Attach event listeners directly to each button using employeeRowDiv
+        const editButton = employeeRowDiv.querySelector(`.edit-button`);
+        const removeButton = employeeRowDiv.querySelector(`.remove-button`);
 
         // Edit button functionality
         editButton.addEventListener('click', function() {
@@ -133,7 +133,7 @@ function displayEmployees() {
             // Get the employee ID from the button's data attribute
             const employeeId = parseInt(this.dataset.employeeId);
             
-            // Filter out the employee to remove (
+            // Filter out the employee to remove (reconstruct the array)
             const updatedEmployees = [];
             for (let i = 0; i < employees.length; i++) {
                 if (employees[i].id !== employeeId) {
@@ -176,7 +176,6 @@ addEmployeeForm.addEventListener(`submit`, function(e) {
         return;
     }
 
-    // Check if age is a valid number
     const currentEditId = parseInt(employeeIdToEditInput.value);
 
     if (currentEditId === -1) {
