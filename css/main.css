@@ -1,141 +1,156 @@
 :root {
-    --primary-color: #212121;
-    --secondary-color: #424242;
-    --tertiary-color: #BDBDBD;
-    --background-color: #EEEEEE;
-    --button-color: #CCCCCC;
-    --button-hover-color: #5a5959;
-    --text-color-light: #FFFFFF;
-    --text-color-medium: #757575;
-    --text-color-dark: #212121;
-    --font-family: Arial, sans-serif;
+  /* Base & Background Colors */
+  --color-primary: #030d11;
+  --color-secondary: #0d3444;
+  --color-tertiary: #185b77;
+  --color-bg-dark: #2281aa;
+
+  /* Buttons */
+  --color-button: #00567a;
+  --color-button-hover: #000c11;
+
+  /* Fonts */
+  --font-mono: "Libertinus Mono", monospace;
+  --font-math: "Libertinus Math", sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  /* Text Colors */
+  --color-text-light: #c3c3c3;
+  --color-text-medium: #aba8b2;
+  --color-text-dark: #031b29;
+  --color-text-accent: #33a5d7;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color-dark);
-    font-family: var(--font-family);
-    padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  font-family: var(--font-display);
+  padding: 10px;
 }
 
-h1, h2 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    text-align: center;
+h1,
+h2 {
+  color: var(--color-text-accent);
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 main {
-    align-items: center;
-    max-width: 1250px;
-    padding: 15px;
-    text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1250px;
+  padding: 15px;
 }
 
 section {
-    background-color: var(--tertiary-color);
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    padding: 15px;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-text-light);
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
 /* Form Styles */
 form {
-    align-items: center;
-    display: flex;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) minmax(100px, auto);
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 form button[type="submit"] {
-    background-color: var(--button-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    color: var(--primary-color);
-    cursor: pointer;
-    font-size: 15px;
-    padding: 10px 15px;
-    width: 100%;
+  background-color: var(--color-button);
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  color: var(--color-text-light);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 15px;
+  width: 100%;
 }
 
 form button[type="submit"]:hover {
-    background-color: var(--button-hover-color);
+  background-color: var(--color-button-hover);
+  color: var(--color-text-accent);
 }
 
 form input[type="text"],
 form input[type="number"] {
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding: 10px;
-    width: 100%;
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px;
+  width: 100%;
 }
 
 form input[type="text"][readonly],
 form input[type="number"][readonly] {
-    background-color: var(--background-color);
+  background-color: var(--color-bg-dark);
 }
-
 
 /* Table Styles */
 .table-container {
-    border: .5px solid var(--secondary-color);
-    border-radius: 5px;
+  border: 0.5px solid var(--secondary-color);
+  border-radius: 5px;
+  overflow-x: auto;
 }
 
 /* Employee List Header and Row Styles */
 .employee-list-header,
 .employee-row {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    border: .5px solid var(--secondary-color);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 0.5px solid var(--color-secondary);
 }
 
 .employee-list-header {
-    background-color: var(--secondary-color);
-    color: var(--text-color-light);
-    font-weight: bold;
-    padding: 10px 0;
+  background-color: var(--color-tertiary);
+  color: var(--color-text-light);
+  font-weight: bold;
+  padding: 10px 0;
 }
 
 .employee-list-column {
-    text-align: center;
+  text-align: center;
 }
 
 /* Employee Row Styles */
 .employee-row {
-    background-color: var(--tertiary-color);
+  background-color: var(--color-text-medium);
+  color: var(--color-text-dark);
 }
 
 .employee-row > div {
-    padding: 10px;
-    text-align: center;
-    border-right: 1px solid var(--secondary-color);
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid var(--color-secondary);
 }
 
 /* Edit button styles */
 .employee-row button.edit-button {
-    background-color: #E0E0E0;
-    border: 1px solid var(--secondary-color);
-    color: var(--text-color-dark);
+  background-color: var(--color-button);
+  border: 1px solid var(--color-button);
+  border-radius: 5px;
+  color: var(--color-text-light);
 }
 
 .employee-row button.edit-button:hover {
-    background-color: var(--button-hover-color);
-    color: var(--text-color-light);
-    cursor: pointer;
+  background-color: var(--color-button-hover);
+  color: var(--color-text-accent);
+  cursor: pointer;
 }
 
 /* Remove button styles */
 .employee-row button.remove-button {
-    background-color: #E0E0E0;
-    border: 1px solid var(--secondary-color);
-    color: var(--text-color-dark);
+  background-color: var(--color-button);
+  border: 1px solid var(--color-button);
+  border-radius: 5px;
+  color: var(--color-text-light);
 }
 
 .employee-row button.remove-button:hover {
-    background-color: var(--button-hover-color);
-    color: var(--text-color-light);
-    cursor: pointer;
+  background-color: var(--color-button-hover);
+  color: var(--color-text-accent);
+  cursor: pointer;
 }
